@@ -39,6 +39,7 @@ format:
   docx: default
   pdf:
     documentclass: article
+    fig-pos: H
     latex-engine: xelatex
     include-in-header:
       - text: |
@@ -67,4 +68,3 @@ crossref:
   fig-prefix: Figure    # (default is "Figure")
   tbl-prefix: Table     # (default is "Table")
   ref-hyperlink: true   # (default is true)
-  fig-pos: H
