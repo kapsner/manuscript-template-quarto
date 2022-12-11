@@ -15,24 +15,24 @@ source(here::here("R", "01wrapper_script.R"))
 ```
 
 \newpage
-{{< include 10manuscript/00abstract.qmd >}}
+{{< include 10manuscript_src/00abstract.qmd >}}
 \newpage
-{{< include 10manuscript/01introduction.qmd >}}
+{{< include 10manuscript_src/01introduction.qmd >}}
 \newpage
-{{< include 10manuscript/02methods.qmd >}}
+{{< include 10manuscript_src/02methods.qmd >}}
 \newpage
-{{< include 10manuscript/03results.qmd >}}
+{{< include 10manuscript_src/03results.qmd >}}
 \newpage
-{{< include 10manuscript/04discussion.qmd >}}
-{{< include 10manuscript/05acknowledgements.qmd >}}
+{{< include 10manuscript_src/04discussion.qmd >}}
+{{< include 10manuscript_src/05acknowledgements.qmd >}}
 \newpage
-{{< include 10manuscript/09references.qmd >}}
+{{< include 10manuscript_src/09references.qmd >}}
 
 ```{r}
 # render supplement
-source(here::here("20supplement", "prepare_supplement.R"))
+source(here::here("11supplement", "prepare_supplement.R"))
 quarto::quarto_render(
-  input = here::here("20supplement", "supplement.qmd")
+  input = here::here("11supplement", "supplement.qmd")
 )
 ```
 

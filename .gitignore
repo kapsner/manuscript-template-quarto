@@ -14,9 +14,10 @@
 !/00data/
 !/00data/data_cleaned/
 !/00data/data_raw/
-!/10manuscript/
-!/20supplement/
-!/30meta/
+!/10manuscript_src/
+!/11supplement/
+!/12meta/
+!/98manuscript_versions/
 !/99communication/
 !/99communication/comm_external/
 !/99communication/comm_internal/
