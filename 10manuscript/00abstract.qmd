@@ -1,0 +1,6 @@
+# Abstract {.unnumbered}
+
+**Objective:** The objective of this repo is to provide a quarto template for docx-compatible manuscripts.
+**Methods:** This repo is made of code in R and markdown.
+**Results:** The repo is available on GitHub.
+**Discussion:** We were able to demonstrate a minimal template repository for docx-compatible Quarto manuscripts.

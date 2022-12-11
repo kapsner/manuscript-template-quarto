@@ -1,0 +1,78 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(magrittr)
+here::set_here(getwd())
+source(here::here("R", "00setup.R"))
+
+# wrapper script for all data analyses and objects that required to render the
+# manuscript and supplement
+source(here::here("R", "01wrapper_script.R"))
+```
+
+\newpage
+{{< include 10manuscript/00abstract.qmd >}}
+\newpage
+{{< include 10manuscript/01introduction.qmd >}}
+\newpage
+{{< include 10manuscript/02methods.qmd >}}
+\newpage
+{{< include 10manuscript/03results.qmd >}}
+\newpage
+{{< include 10manuscript/04discussion.qmd >}}
+{{< include 10manuscript/05acknowledgements.qmd >}}
+\newpage
+{{< include 10manuscript/09references.qmd >}}
+
+```{r}
+# render supplement
+source(here::here("20supplement", "prepare_supplement.R"))
+quarto::quarto_render(
+  input = here::here("20supplement", "supplement.qmd")
+)
+```
+
+\newpage
+
+# Tables {.unnumbered}
+
+```{r}
+#| include: true
+#| label: tbl-data
+#| tbl-cap: "Data"
+#| column: body-outset
+
+dat <- iris |>
+  summary() |>
+  knitr::kable()
+
+if (knitr::opts_knit$get("rmarkdown.pandoc.to") == "latex") {
+  dat |>
+  kableExtra::kable_styling(latex_options = "HOLD_position")
+} else {
+  dat
+}
+```
+
+\newpage
+
+# Figures {.unnumbered}
+
+```{r}
+#| include: true
+#| label: fig-data
+#| layout-ncol: 2
+#| fig-cap: "Data plots."
+#| fig-subcap:
+#|   - "Sepal.Length vs. Sepal.Width."
+#|   - "Petal.Length vs. Petal.Width"
+#| out.width: "98%"
+#| column: body-outset
+
+plot(iris$Sepal.Length, iris$Sepal.Width)
+plot(iris$Petal.Length, iris$Petal.Width)
+```

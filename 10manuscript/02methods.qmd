@@ -1,0 +1,11 @@
+---
+bibliography: references.bib
+---
+
+# Methods
+
+Text goes here.
+
+## Statistical Analysis
+
+Statistics were computed in the R programming language [@base] using base R. Gaphics were generated using the `ggplot2` R package [@ggplot2].

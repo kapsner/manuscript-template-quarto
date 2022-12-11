@@ -1,0 +1,55 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+manuscript_data <- here::here(".all_data")
+if (file.exists(manuscript_data)) {
+  # load image
+  load(file = manuscript_data)
+}
+```
+
+# Supplementary Methods
+
+\newpage
+
+# Supplemental Tables {.unnumbered}
+
+```{r}
+#| include: true
+#| label: tbl-supp-data
+#| tbl-cap: "Data"
+#| column: body-outset
+
+dat <- iris |>
+  summary() |>
+  knitr::kable()
+
+if (knitr::opts_knit$get("rmarkdown.pandoc.to") == "latex") {
+  dat |>
+  kableExtra::kable_styling(latex_options = "HOLD_position")
+} else {
+  dat
+}
+```
+
+\newpage
+
+# Supplemental Figures {.unnumbered}
+
+```{r}
+#| include: true
+#| label: fig-supp-data
+#| layout-ncol: 2
+#| fig-cap: "Data plots."
+#| fig-subcap:
+#|   - "Sepal.Length vs. Sepal.Width."
+#|   - "Petal.Length vs. Petal.Width"
+#| out.width: "98%"
+#| column: body-outset
+
+plot(iris$Sepal.Length, iris$Sepal.Width)
+plot(iris$Petal.Length, iris$Petal.Width)
+```

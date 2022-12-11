@@ -1,0 +1,70 @@
+project:
+  type: default
+  output-dir: output
+  execute-dir: project
+  render:
+    - index.qmd
+output-file: Manuscript
+
+title: "YOUR TITLE GOES HERE"
+
+# https://quarto.org/docs/journals/authors.html#author-metadata
+author:
+  - John Doe:
+      affiliations: [jdct]
+      correspondence: true
+      email: john.doe@jdct.edu
+      orcid: 0000-1111-2222-3333
+  - Jane Roe:
+      affiliations: [jdct, iot]
+      orcid: 0000-2222-1111-3333
+
+affiliations:
+  - id: jdct
+    name: John Doe Center for Technology, John Doe University, Doetown, Germany.
+  - id: iot
+    name: Institute of Technology, John Doe University, Doetown, Germany.
+
+bibliography: references.bib
+# citation styles from: https://www.zotero.org/styles
+csl: 30meta/ios-press-books.csl
+ 
+filters:
+  # watch https://github.com/pandoc/lua-filters/issues/226 for updates on
+  # quarto adjustments of these filters
+  - 30meta/scholarly-metadata-quarto.lua
+  - 30meta/author-info-blocks-quarto.lua
+
+format:
+  docx: default
+  pdf:
+    documentclass: article
+    latex-engine: xelatex
+    include-in-header:
+      - text: |
+          \usepackage{float}
+    geometry:
+      - left=25mm
+      - right=25mm
+      - top=25mm
+      - bottom=25mm
+
+
+# https://quarto.org/docs/reference/formats/opml.html#execution
+execute:
+  include: false
+  echo: false
+  message: false
+  warning: false
+  error: true
+
+
+## https://quarto.org/docs/authoring/cross-references.html#titles
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Table      # (default is "Table")
+  # title-delim: —      # (default is ":")
+  fig-prefix: Figure    # (default is "Figure")
+  tbl-prefix: Table     # (default is "Table")
+  ref-hyperlink: true   # (default is true)
+  fig-pos: H

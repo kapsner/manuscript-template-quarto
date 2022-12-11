@@ -1,0 +1,11 @@
+# Discussion
+
+Discussion goes here.
+
+## Limitations
+
+Some limitations go here.
+
+## Conclusions
+
+We here demonstrate a minimal template example for Quarto manuscripts that are docx-compatible.

@@ -1,0 +1,8 @@
+/*
+/*/*
+
+!.gitignore
+!_quarto.yml
+!*.R
+!*.qmd
+/.quarto/
