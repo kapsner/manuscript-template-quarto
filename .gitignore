@@ -9,6 +9,7 @@
 
 !/*.Rproj
 !/.here
+!/references.bib
 
 !/00data/
 !/00data/data_cleaned/
