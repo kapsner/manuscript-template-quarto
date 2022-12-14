@@ -26,5 +26,5 @@ for (element in generic_path_changes) {
 
 writeLines(
   text = change_yml,
-  con = here::here("11supplement", "_quarto.yml")
+  con = here::here("3supplement", "_quarto.yml")
 )

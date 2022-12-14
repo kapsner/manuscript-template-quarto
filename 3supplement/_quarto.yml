@@ -27,13 +27,13 @@ affiliations:
 
 bibliography: ../references.bib
 # citation styles from: https://www.zotero.org/styles
-csl: ../12meta/ios-press-books.csl
+csl: ../meta/ios-press-books.csl
  
 filters:
   # watch https://github.com/pandoc/lua-filters/issues/226 for updates on
   # quarto adjustments of these filters
-  - ../12meta/scholarly-metadata-quarto.lua
-  - ../12meta/author-info-blocks-quarto.lua
+  - ../meta/scholarly-metadata-quarto.lua
+  - ../meta/author-info-blocks-quarto.lua
 
 format:
   docx: default
