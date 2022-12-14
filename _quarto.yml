@@ -9,45 +9,71 @@ output-file: Manuscript
 title: "YOUR TITLE GOES HERE"
 
 # https://quarto.org/docs/journals/authors.html#author-metadata
-author:
-  - John Doe:
-      affiliations: [jdct]
-      correspondence: true
-      email: john.doe@jdct.edu
-      orcid: 0000-1111-2222-3333
-  - Jane Roe:
-      affiliations: [jdct, iot]
-      orcid: 0000-2222-1111-3333
-
+authors:
+  - name: John Doe
+    affiliations:
+      - ref: jdct
+    corresponding: true
+    email: john.doe@jdct.edu
+    orcid: 0000-1111-2222-3333
+  - name: Jane Roe
+    affiliations:
+      - ref: jdct
+      - ref: iot
+    orcid: 0000-2222-1111-3333
+filters:
+  - affiliations2.lua
 affiliations:
   - id: jdct
     name: John Doe Center for Technology, John Doe University, Doetown, Germany.
   - id: iot
     name: Institute of Technology, John Doe University, Doetown, Germany.
 
+# author:
+#   - John Doe:
+#       institute: [jdct]
+#       corresponding: true
+#       email: john.doe@jdct.edu
+#       orcid: 0000-1111-2222-3333
+#   - Jane Roe:
+#       institute: [jdct, iot]
+#       orcid: 0000-2222-1111-3333
+# filters:
+#   - meta/scholarly-metadata-quarto.lua
+#   - meta/author-info-blocks-quarto.lua
+# institute:
+#   - id: jdct
+#     name: John Doe Center for Technology, John Doe University, Doetown, Germany.
+#   - id: iot
+#     name: Institute of Technology, John Doe University, Doetown, Germany.
+
+
 bibliography: references.bib
 # citation styles from: https://www.zotero.org/styles
-csl: 12meta/ios-press-books.csl
+csl: meta/ios-press-books.csl
  
-filters:
+#filters:
   # watch https://github.com/pandoc/lua-filters/issues/226 for updates on
   # quarto adjustments of these filters
-  - 12meta/scholarly-metadata-quarto.lua
-  - 12meta/author-info-blocks-quarto.lua
+  # - 12meta/scholarly-metadata-quarto.lua
+  # - 12meta/author-info-blocks-quarto.lua
+  #- affiliations.lua
 
 format:
+  native: default
   docx: default
-  pdf:
-    documentclass: article
-    latex-engine: xelatex
-    include-in-header:
-      - text: |
-          \usepackage{float}
-    geometry:
-      - left=25mm
-      - right=25mm
-      - top=25mm
-      - bottom=25mm
+  # pdf:
+  #   documentclass: article
+  #   latex-engine: xelatex
+  #   include-in-header:
+  #     - text: |
+  #         \usepackage{float}
+  #   geometry:
+  #     - left=25mm
+  #     - right=25mm
+  #     - top=25mm
+  #     - bottom=25mm
+  #   fig-pos: H
 
 
 # https://quarto.org/docs/reference/formats/opml.html#execution
@@ -67,4 +93,3 @@ crossref:
   fig-prefix: Figure    # (default is "Figure")
   tbl-prefix: Table     # (default is "Table")
   ref-hyperlink: true   # (default is true)
-  fig-pos: H
