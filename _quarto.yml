@@ -16,64 +16,45 @@ authors:
     corresponding: true
     email: john.doe@jdct.edu
     orcid: 0000-1111-2222-3333
+    equal-contributor: true
+  - name: John Roe
+    affiliations:
+      - ref: jdct
+    orcid: 0000-3333-2222-1111
   - name: Jane Roe
     affiliations:
       - ref: jdct
       - ref: iot
     orcid: 0000-2222-1111-3333
-filters:
-  - affiliations2.lua
+    equal-contributor: true
+
 affiliations:
   - id: jdct
     name: John Doe Center for Technology, John Doe University, Doetown, Germany.
   - id: iot
     name: Institute of Technology, John Doe University, Doetown, Germany.
 
-# author:
-#   - John Doe:
-#       institute: [jdct]
-#       corresponding: true
-#       email: john.doe@jdct.edu
-#       orcid: 0000-1111-2222-3333
-#   - Jane Roe:
-#       institute: [jdct, iot]
-#       orcid: 0000-2222-1111-3333
-# filters:
-#   - meta/scholarly-metadata-quarto.lua
-#   - meta/author-info-blocks-quarto.lua
-# institute:
-#   - id: jdct
-#     name: John Doe Center for Technology, John Doe University, Doetown, Germany.
-#   - id: iot
-#     name: Institute of Technology, John Doe University, Doetown, Germany.
-
-
 bibliography: references.bib
 # citation styles from: https://www.zotero.org/styles
 csl: meta/ios-press-books.csl
  
-#filters:
-  # watch https://github.com/pandoc/lua-filters/issues/226 for updates on
-  # quarto adjustments of these filters
-  # - 12meta/scholarly-metadata-quarto.lua
-  # - 12meta/author-info-blocks-quarto.lua
-  #- affiliations.lua
+filters:
+  - kapsner/authors-block
 
 format:
-  native: default
   docx: default
-  # pdf:
-  #   documentclass: article
-  #   latex-engine: xelatex
-  #   include-in-header:
-  #     - text: |
-  #         \usepackage{float}
-  #   geometry:
-  #     - left=25mm
-  #     - right=25mm
-  #     - top=25mm
-  #     - bottom=25mm
-  #   fig-pos: H
+  pdf:
+    documentclass: article
+    latex-engine: xelatex
+    include-in-header:
+      - text: |
+          \usepackage{float}
+    geometry:
+      - left=25mm
+      - right=25mm
+      - top=25mm
+      - bottom=25mm
+    fig-pos: H
 
 
 # https://quarto.org/docs/reference/formats/opml.html#execution

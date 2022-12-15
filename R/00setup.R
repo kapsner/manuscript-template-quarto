@@ -1,11 +1,5 @@
-lua_base_url <- "https://raw.githubusercontent.com/kapsner/lua-filters/affiliations_quarto_compatibility/"
-
-# download lua filters
-download.file(
-  url = paste0(lua_base_url, "author-info-blocks/author-info-blocks-quarto.lua"),
-  destfile = here::here("12meta", "author-info-blocks-quarto.lua")
-)
-download.file(
-  url = paste0(lua_base_url, "scholarly-metadata/scholarly-metadata-quarto.lua"),
-  destfile = here::here("12meta", "scholarly-metadata-quarto.lua")
-)
+# install quarto extension
+if (!file.exists(here::here("_extensions/kapsner/authors-block"))) {
+  cmd <- "quarto add --no-prompt kapsner/authors-block"
+  system(command = cmd)
+}
