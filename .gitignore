@@ -5,6 +5,7 @@
 !*.qmd
 !*.R
 !README.md
+!/NEWS.md
 !_quarto.yml
 
 !/*.Rproj
@@ -30,3 +31,4 @@
 /.quarto/
 .Rproj.user
 _extensions
+devstuffs.R
