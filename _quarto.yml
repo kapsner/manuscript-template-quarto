@@ -55,7 +55,6 @@ format:
       - right=25mm
       - top=25mm
       - bottom=25mm
-    fig-pos: H
 
 
 # https://quarto.org/docs/reference/formats/opml.html#execution
