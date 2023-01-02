@@ -8,7 +8,7 @@ change_yml <- gsub("tbl-title: Table", "tbl-title: Table S", change_yml)
 ext_dir <- here::here("_extensions")
 if (file.exists(ext_dir)) {
   supp_extensions <- here::here("3supplement", "_extensions")
-  kdry::misc_recursive_copy(source_dir = ext_dir, target_dir = supp_extensions)
+  kdry::misc_recursive_copy(source_dir = ext_dir, target_dir = supp_extensions, force = TRUE)
 }
 
 generic_path_changes <- c(
