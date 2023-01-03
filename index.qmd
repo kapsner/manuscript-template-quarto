@@ -5,10 +5,10 @@ editor_options:
 ---
 
 ```{r}
+source(file.path("R", "00setup.R"))
+
 library(magrittr)
 here::set_here(getwd())
-source(here::here("R", "00setup.R"))
-
 # wrapper script for all data analyses and objects that required to render the
 # manuscript and supplement
 source(here::here("1analysis", "00wrapper_script.R"))
@@ -24,6 +24,7 @@ source(here::here("1analysis", "00wrapper_script.R"))
 {{< include 2manuscript_src/03results.qmd >}}
 \newpage
 {{< include 2manuscript_src/04discussion.qmd >}}
+\newpage
 {{< include 2manuscript_src/05acknowledgements.qmd >}}
 \newpage
 {{< include 2manuscript_src/09references.qmd >}}
