@@ -2,8 +2,10 @@ yml_to_modify <- readLines(here::here("_quarto.yml"))
 
 change_yml <- gsub("index.qmd", "supplement.qmd", yml_to_modify)
 change_yml <- gsub("output-file: (.*)$", "output-file: Supplementary_Information", change_yml)
-change_yml <- gsub("fig-title: Figure", "fig-title: Figure S", change_yml)
-change_yml <- gsub("tbl-title: Table", "tbl-title: Table S", change_yml)
+change_yml <- gsub("fig-title: Figure", "fig-title: Figure Supp.", change_yml)
+change_yml <- gsub("tbl-title: Table", "tbl-title: Table Supp.", change_yml)
+change_yml <- gsub("fig-prefix: Figure", "fig-prefix: Figure Supp.", change_yml)
+change_yml <- gsub("tbl-prefix: Table", "tbl-prefix: Table Supp.", change_yml)
 
 ext_dir <- here::here("_extensions")
 if (file.exists(ext_dir)) {
