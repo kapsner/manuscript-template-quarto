@@ -9,6 +9,11 @@ source(file.path("R", "00setup.R"))
 
 library(magrittr)
 here::set_here(getwd())
+
+data_raw <- here::here("0data", "data_raw")
+data_dir <- here::here("0data", "data_cleaned")
+figurepath <- here::here("4figures")
+
 # wrapper script for all data analyses and objects that required to render the
 # manuscript and supplement
 source(here::here("1analysis", "00wrapper_script.R"))
@@ -35,6 +40,17 @@ source(here::here("3supplement", "prepare_supplement.R"))
 quarto::quarto_render(
   input = here::here("3supplement", "supplement.qmd")
 )
+```
+
+```{r}
+# convert tiff to png
+to_png <- list.files(figurepath)[endsWith(list.files(figurepath), ".tiff")]
+png_path <- paste0(figurepath, "PNG/")
+dir.create(png_path)
+for (f in to_png) {
+  img <- tiff::readTIFF(paste0(figurepath, f))
+  png::writePNG(img, target=paste0(png_path, gsub("tiff$", "png", f)))
+}
 ```
 
 \newpage
