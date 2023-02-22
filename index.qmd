@@ -45,11 +45,11 @@ quarto::quarto_render(
 ```{r}
 # convert tiff to png
 to_png <- list.files(figurepath)[endsWith(list.files(figurepath), ".tiff")]
-png_path <- paste0(figurepath, "PNG/")
+png_path <- file.path(figurepath, "PNG/")
 dir.create(png_path)
 for (f in to_png) {
-  img <- tiff::readTIFF(paste0(figurepath, f))
-  png::writePNG(img, target=paste0(png_path, gsub("tiff$", "png", f)))
+  img <- tiff::readTIFF(file.path(figurepath, f))
+  png::writePNG(img, target = file.path(png_path, gsub("tiff$", "png", f)))
 }
 ```
 
