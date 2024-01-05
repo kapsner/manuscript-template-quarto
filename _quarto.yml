@@ -68,9 +68,9 @@ execute:
 
 ## https://quarto.org/docs/authoring/cross-references.html#titles
 crossref:
-  fig-title: Figure     # (default is "Figure")
-  tbl-title: Table      # (default is "Table")
-  # title-delim: —      # (default is ":")
+  fig-title: '**Figure**'     # (default is "Figure")
+  tbl-title: '**Table**'      # (default is "Table")
+  title-delim: '**.**'      # (default is ":")
   fig-prefix: Figure    # (default is "Figure")
   tbl-prefix: Table     # (default is "Table")
   ref-hyperlink: true   # (default is true)
